@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/back.png</file>
+        <file>images/back1.jpg</file>
+        <file>images/damotouicon1.ico</file>
+        <file>images/damotouicon2.ico</file>
+        <file>images/icon.png</file>
+        <file>images/Mychess1.png</file>
+        <file>images/Mychess2.png</file>
+        <file>images/back2.jpg</file>
+        <file>images/background1.png</file>
+        <file>images/background2.png</file>
+        <file>images/timg.jpg</file>
+    </qresource>
+</RCC>

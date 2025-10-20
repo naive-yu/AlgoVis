@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TSPWindow</class>
+ <widget class="QMainWindow" name="TSPWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>818</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TSP</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>2</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>输出</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QListWidget" name="listWidget">
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
+         <property name="autoScrollMargin">
+          <number>6</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>818</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#menubar{
+	background-color:#ccd5f0;
+}</string>
+   </property>
+   <widget class="QMenu" name="menu_2">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>进化算法</string>
+    </property>
+    <widget class="QMenu" name="menu_3">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>蚁群算法</string>
+     </property>
+     <addaction name="action211"/>
+     <addaction name="action212"/>
+    </widget>
+    <widget class="QMenu" name="menu_4">
+     <property name="title">
+      <string>遗传算法</string>
+     </property>
+     <addaction name="action221"/>
+     <addaction name="action222"/>
+    </widget>
+    <widget class="QMenu" name="menuParticle">
+     <property name="title">
+      <string>粒子群优化算法</string>
+     </property>
+     <addaction name="action231"/>
+     <addaction name="action232"/>
+    </widget>
+    <addaction name="menu_3"/>
+    <addaction name="menu_4"/>
+    <addaction name="menuParticle"/>
+   </widget>
+   <widget class="QMenu" name="menu_1">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>数据集</string>
+    </property>
+    <addaction name="action11"/>
+    <addaction name="action12"/>
+    <addaction name="action13"/>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>执行</string>
+    </property>
+    <addaction name="action61"/>
+    <addaction name="action62"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>动画速率</string>
+    </property>
+    <addaction name="action51"/>
+    <addaction name="action52"/>
+    <addaction name="action53"/>
+   </widget>
+   <addaction name="menu_1"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_6"/>
+   <addaction name="menu_5"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#statusbar{
+	background-color:#ccd5f0;
+}</string>
+   </property>
+  </widget>
+  <action name="action11">
+   <property name="text">
+    <string>bayg29</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action12">
+   <property name="text">
+    <string>att48</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action211">
+   <property name="text">
+    <string>直接运行</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action212">
+   <property name="text">
+    <string>运行并演示</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action221">
+   <property name="text">
+    <string>直接运行</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action222">
+   <property name="text">
+    <string>运行并演示</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action231">
+   <property name="text">
+    <string>直接运行</string>
+   </property>
+  </action>
+  <action name="action232">
+   <property name="text">
+    <string>运行并演示</string>
+   </property>
+  </action>
+  <action name="action13">
+   <property name="text">
+    <string>st70</string>
+   </property>
+  </action>
+  <action name="action51">
+   <property name="text">
+    <string>1x</string>
+   </property>
+  </action>
+  <action name="action52">
+   <property name="text">
+    <string>2x</string>
+   </property>
+  </action>
+  <action name="action53">
+   <property name="text">
+    <string>5x</string>
+   </property>
+  </action>
+  <action name="action61">
+   <property name="text">
+    <string>继续</string>
+   </property>
+  </action>
+  <action name="action62">
+   <property name="text">
+    <string>暂停</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>menubar</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>TSPWindow</receiver>
+   <slot>deal_menu(QAction*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>118</x>
+     <y>-27</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>deal_menu(QAction*)</slot>
+ </slots>
+</ui>

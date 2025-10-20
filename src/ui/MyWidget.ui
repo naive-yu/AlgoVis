@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyWidget</class>
+ <widget class="QMainWindow" name="MyWidget">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>956</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MyWidget</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::FocusPolicy::ClickFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="Begin">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="1" rowspan="2" colspan="5">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="7" column="0">
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Minimum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>100</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="8" column="2">
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Maximum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>100</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="7" column="1" colspan="3">
+           <widget class="QLabel" name="label_5">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MyWidget.qrc">:/images/images/back.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+            <property name="openExternalLinks">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="2">
+           <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>N皇后问题</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="4">
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="5">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="5">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="5">
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0" colspan="5">
+           <widget class="QLabel" name="label_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>间不能相互攻击。两个皇后不能相互攻击，即它们不能同行，不能同列，也不能</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="5">
+           <widget class="QLabel" name="label_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>位于同一条对角线上。例如下图即为 8 皇后问题的一种解法。</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="5">
+           <widget class="QLabel" name="label_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="acceptDrops">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string> n 皇后问题研究的是如何将 n 个皇后放置在 n x n 的棋盘上，并且使皇后彼此之</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::TextFormat::PlainText</enum>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" rowspan="2" colspan="6">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>930</width>
+              <height>13</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Run"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>956</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#menuBar{
+	background-color:#ccd5f0;
+}</string>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menu_1">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>287</x>
+      <y>100</y>
+      <width>109</width>
+      <height>123</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMenu{
+	
+}</string>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>创建</string>
+    </property>
+    <widget class="QMenu" name="menu">
+     <property name="title">
+      <string>其他小规格</string>
+     </property>
+     <addaction name="action5"/>
+     <addaction name="action4"/>
+    </widget>
+    <widget class="QMenu" name="menu_7">
+     <property name="title">
+      <string>其他大规格</string>
+     </property>
+     <addaction name="action9"/>
+     <addaction name="action10"/>
+     <addaction name="action11"/>
+     <addaction name="action12"/>
+    </widget>
+    <addaction name="action8"/>
+    <addaction name="action7"/>
+    <addaction name="action6"/>
+    <addaction name="menu"/>
+    <addaction name="menu_7"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>执行</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>暂停</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="focusPolicy">
+     <enum>Qt::FocusPolicy::ClickFocus</enum>
+    </property>
+    <property name="title">
+     <string>终止</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>重新开始</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>退出</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_8">
+    <property name="title">
+     <string>速度</string>
+    </property>
+    <addaction name="v1"/>
+    <addaction name="v2"/>
+    <addaction name="v3"/>
+    <addaction name="v4"/>
+   </widget>
+   <addaction name="menu_1"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_8"/>
+   <addaction name="menu_6"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="tabletTracking">
+    <bool>false</bool>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#statusBar{
+	background-color:#ccd5f0;
+}</string>
+   </property>
+   <property name="sizeGripEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <action name="action8">
+   <property name="text">
+    <string>8x8棋盘</string>
+   </property>
+  </action>
+  <action name="action7">
+   <property name="text">
+    <string>7x7棋盘</string>
+   </property>
+  </action>
+  <action name="action6">
+   <property name="text">
+    <string>6x6棋盘</string>
+   </property>
+  </action>
+  <action name="action5">
+   <property name="text">
+    <string>5x5棋盘</string>
+   </property>
+  </action>
+  <action name="action4">
+   <property name="text">
+    <string>4x4棋盘</string>
+   </property>
+  </action>
+  <action name="action9">
+   <property name="text">
+    <string>9x9棋盘</string>
+   </property>
+  </action>
+  <action name="action10">
+   <property name="text">
+    <string>10x10棋盘</string>
+   </property>
+  </action>
+  <action name="action11">
+   <property name="text">
+    <string>11x11棋盘</string>
+   </property>
+  </action>
+  <action name="action12">
+   <property name="text">
+    <string>12x12棋盘</string>
+   </property>
+  </action>
+  <action name="v1">
+   <property name="text">
+    <string>慢</string>
+   </property>
+  </action>
+  <action name="v2">
+   <property name="text">
+    <string>中</string>
+   </property>
+  </action>
+  <action name="v3">
+   <property name="text">
+    <string>快</string>
+   </property>
+  </action>
+  <action name="v4">
+   <property name="text">
+    <string>超快</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MyWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>menuBar</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>MyWidget</receiver>
+   <slot>dealMenu1(QAction*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>226</x>
+     <y>4</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>-12</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>dealMenu1(QAction*)</slot>
+ </slots>
+</ui>
