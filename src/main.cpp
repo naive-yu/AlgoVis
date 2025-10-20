@@ -1,6 +1,4 @@
-#include "MyWidget.h"
-#include "TSPWindow.h"
-#include "include/MyCPlus.h"
+#include "MainWindow.h"
 #include <QApplication>
 #include <QDateTime>
 #include <QDir>
@@ -76,11 +74,7 @@ int main(int argc, char *argv[]) {
       break;
     }
   }
-  TSPWindow w;
-  w.show();
-  MyWidget e;
-  e.show();
-  MyCPlus m;
+  MainWindow m;
   m.show();
   return a.exec();
 }

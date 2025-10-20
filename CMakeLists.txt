@@ -26,6 +26,7 @@ set(PROJECT_SOURCES
   src/TSPWindow.cpp
   src/ui/TSPWindow.ui
   src/ui/MyWidget.ui
+  src/ui/MainWindow.ui
   src/ui/Dialog.ui
   config/tsp_config.ini
   ${TS_FILES}
@@ -56,14 +57,8 @@ set(PROJECT_SOURCES
   src/Chess.cpp
   src/include/MyCPlus.h
   src/MyCPlus.cpp
-
-  src/ui/images/back.png
-  src/ui/images/back1.jpg
-  src/ui/images/damotouicon1.ico
-  src/ui/images/damotouicon2.ico
-  src/ui/images/icon.png
-  src/ui/images/Mychess1.png
-  src/ui/images/Mychess2.png
+  src/include/MainWindow.h
+  src/MainWindow.cpp
 )
 
 set(TSP_SRC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/include)
