@@ -59,6 +59,11 @@ set(PROJECT_SOURCES
   src/MyCPlus.cpp
   src/include/MainWindow.h
   src/MainWindow.cpp
+  src/include/Node.h
+  src/include/LinkedStack.h
+  src/LinkedStack.cpp
+  src/include/Maze.h
+  src/Maze.cpp
 )
 
 set(TSP_SRC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/include)

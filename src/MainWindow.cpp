@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include "Maze.h"
 #include "MyCPlus.h"
 #include "MyWidget.h"
 #include "TSPWindow.h"
@@ -13,8 +14,7 @@
 Q_LOGGING_CATEGORY(MainWindowLog, "MainWindow")
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), tspThread(nullptr),
-      widgetThread(nullptr), cplusThread(nullptr) {
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
 
   // 连接按钮信号到槽函数
@@ -24,25 +24,20 @@ MainWindow::MainWindow(QWidget *parent)
           &MainWindow::startMyWidget);
   connect(ui->pushButton_3, &QPushButton::clicked, this,
           &MainWindow::startMyCPlus);
+  connect(ui->pushButton_4, &QPushButton::clicked, this,
+          &MainWindow::startMaze);
 }
 
 MainWindow::~MainWindow() {
   delete ui;
-  // 确保线程安全退出
-  if (tspThread) {
-    tspThread->quit();
-    tspThread->wait();
-    delete tspThread;
-  }
-  if (widgetThread) {
-    widgetThread->quit();
-    widgetThread->wait();
-    delete widgetThread;
-  }
-  if (cplusThread) {
-    cplusThread->quit();
-    cplusThread->wait();
-    delete cplusThread;
+
+  // 退出并销毁所有子线程
+  for (QThread *thread : threads) {
+    if (thread->isRunning()) {
+      thread->quit();
+      thread->wait();
+    }
+    delete thread;
   }
 }
 
@@ -58,6 +53,7 @@ void MainWindow::startTSPWindow() {
   connect(tspThread, &QThread::finished, tspThread, &QThread::deleteLater);
   connect(tspWindow, &TSPWindow::destroyed, tspWindow, &TSPWindow::deleteLater);
 
+  threads.append(tspThread);
   tspThread->start();
 }
 
@@ -73,6 +69,7 @@ void MainWindow::startMyWidget() {
           &QThread::deleteLater);
   connect(myWidget, &MyWidget::destroyed, myWidget, &MyWidget::deleteLater);
 
+  threads.append(widgetThread);
   widgetThread->start();
 }
 
@@ -87,5 +84,21 @@ void MainWindow::startMyCPlus() {
   connect(cplusThread, &QThread::finished, cplusThread, &QThread::deleteLater);
   connect(myCPlus, &MyCPlus::destroyed, myCPlus, &MyCPlus::deleteLater);
 
+  threads.append(cplusThread);
   cplusThread->start();
+}
+
+void MainWindow::startMaze() {
+  QThread *mazeThread = new QThread(this);
+  Maze *myMaze = new Maze();
+  myMaze->moveToThread(mazeThread);
+
+  connect(mazeThread, &QThread::started, myMaze,
+          [myMaze]() { myMaze->show(); });
+  connect(myMaze, &Maze::destroyed, mazeThread, &QThread::quit);
+  connect(mazeThread, &QThread::finished, mazeThread, &QThread::deleteLater);
+  connect(myMaze, &Maze::destroyed, myMaze, &Maze::deleteLater);
+
+  threads.append(mazeThread);
+  mazeThread->start();
 }

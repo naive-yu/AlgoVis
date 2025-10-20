@@ -11,5 +11,19 @@
         <file>images/background1.png</file>
         <file>images/background2.png</file>
         <file>images/timg.jpg</file>
+        <file>images/bar.png</file>
+        <file>images/bars.png</file>
+        <file>images/maze.jpg</file>
+        <file>images/move1.png</file>
+        <file>images/move2.png</file>
+        <file>images/move2b.png</file>
+        <file>images/move2l.png</file>
+        <file>images/move2r.png</file>
+        <file>images/move2t.png</file>
+        <file>images/moveb.png</file>
+        <file>images/movel.png</file>
+        <file>images/mover.png</file>
+        <file>images/movet.png</file>
+        <file>images/wall.png</file>
     </qresource>
 </RCC>

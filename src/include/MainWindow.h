@@ -2,6 +2,7 @@
 #include <QMainWindow>
 #include <QThread>
 #include <QTimer>
+#include <qthread.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,10 +21,9 @@ private slots:
   void startTSPWindow();
   void startMyWidget();
   void startMyCPlus();
+  void startMaze();
 
 private:
   Ui::MainWindow *ui;
-  QThread *tspThread;
-  QThread *widgetThread;
-  QThread *cplusThread;
+  QList<QThread *> threads;
 };
