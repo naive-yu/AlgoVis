@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(TSP VERSION 0.1 LANGUAGES CXX)
+project(AlgoVis VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -66,12 +66,12 @@ set(PROJECT_SOURCES
   src/Maze.cpp
 )
 
-set(TSP_SRC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/include)
+set(ALGOVIS_SRC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src/include)
 # NOTE: prefer target_include_directories for modern CMake. The target is defined later,
 # so we'll add the include dir to the target after target creation.
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-  qt_add_executable(TSP
+  qt_add_executable(AlgoVis
     MANUAL_FINALIZATION
     ${PROJECT_SOURCES}
   )
@@ -83,13 +83,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
   qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 else()
   if(ANDROID)
-    add_library(TSP SHARED
+    add_library(AlgoVis SHARED
       ${PROJECT_SOURCES}
     )
     # Define properties for Android with Qt 5 after find_package() calls as:
     #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
   else()
-    add_executable(TSP
+    add_executable(AlgoVis
       ${PROJECT_SOURCES}
     )
   endif()
@@ -97,18 +97,19 @@ else()
   qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(TSP PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(AlgoVis PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Add project include directory to the target (modern CMake)
-target_include_directories(TSP PRIVATE ${TSP_SRC_INCLUDE_DIR})
+# Add project include directory to the target (modern CMake)
+target_include_directories(AlgoVis PRIVATE ${ALGOVIS_SRC_INCLUDE_DIR})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.TSP)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.AlgoVis)
 endif()
-set_target_properties(TSP PROPERTIES
+set_target_properties(AlgoVis PROPERTIES
   ${BUNDLE_ID_OPTION}
   MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
   MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -116,11 +117,11 @@ set_target_properties(TSP PROPERTIES
   WIN32_EXECUTABLE TRUE
 )
 
-qt_add_resources(TSP_RESOURCES
+qt_add_resources(ALGOVIS_RESOURCES
   src/ui/MyWidget.qrc
 )
 
-target_sources(TSP PRIVATE ${TSP_RESOURCES})
+target_sources(AlgoVis PRIVATE ${ALGOVIS_RESOURCES})
 
 # ==================== 打包相关配置开始 ====================
 
@@ -150,46 +151,46 @@ if(WINDEPLOYQT_EXECUTABLE AND WIN32)
   add_custom_target(deploy
     COMMAND ${CMAKE_COMMAND} -E remove_directory "${DEPLOY_DIR}"
     COMMAND ${CMAKE_COMMAND} -E make_directory "${DEPLOY_DIR}/config"
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:TSP> "${DEPLOY_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:AlgoVis> "${DEPLOY_DIR}"
     COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/config/tsp_config.ini" "${DEPLOY_DIR}/config"
     COMMAND ${WINDEPLOYQT_EXECUTABLE}
     --compiler-runtime
     --no-translations
     --no-system-d3d-compiler
     --no-opengl-sw
-    "${DEPLOY_DIR}/$<TARGET_FILE_NAME:TSP>"
-    COMMENT "Deploying TSP application with Qt dependencies..."
-    DEPENDS TSP
+    "${DEPLOY_DIR}/$<TARGET_FILE_NAME:AlgoVis>"
+    COMMENT "Deploying AlgoVis application with Qt dependencies..."
+    DEPENDS AlgoVis
   )
 elseif(MACDEPLOYQT_EXECUTABLE AND APPLE)
   add_custom_target(deploy
     COMMAND ${CMAKE_COMMAND} -E remove_directory "${DEPLOY_DIR}"
     COMMAND ${CMAKE_COMMAND} -E make_directory "${DEPLOY_DIR}/config"
-    COMMAND ${CMAKE_COMMAND} -E copy_directory "$<TARGET_BUNDLE_DIR:TSP>" "${DEPLOY_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E copy_directory "$<TARGET_BUNDLE_DIR:AlgoVis>" "${DEPLOY_DIR}"
     COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/config/tsp_config.ini" "${DEPLOY_DIR}/config"
-    COMMAND ${MACDEPLOYQT_EXECUTABLE} "${DEPLOY_DIR}/$<TARGET_BUNDLE_CONTENT_DIR:TSP>/.."
+    COMMAND ${MACDEPLOYQT_EXECUTABLE} "${DEPLOY_DIR}/$<TARGET_BUNDLE_CONTENT_DIR:AlgoVis>/.."
     -always-overwrite
-    COMMENT "Deploying TSP application for macOS..."
-    DEPENDS TSP
+    COMMENT "Deploying AlgoVis application for macOS..."
+    DEPENDS AlgoVis
   )
 elseif(LINUXDEPLOYQT_EXECUTABLE AND UNIX AND NOT APPLE)
   add_custom_target(deploy
     COMMAND ${CMAKE_COMMAND} -E remove_directory "${DEPLOY_DIR}"
     COMMAND ${CMAKE_COMMAND} -E make_directory "${DEPLOY_DIR}/config"
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:TSP> "${DEPLOY_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:AlgoVis> "${DEPLOY_DIR}"
     COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/config/tsp_config.ini" "${DEPLOY_DIR}/config"
     COMMAND ${LINUXDEPLOYQT_EXECUTABLE}
-    "${DEPLOY_DIR}/$<TARGET_FILE_NAME:TSP>"
+    "${DEPLOY_DIR}/$<TARGET_FILE_NAME:AlgoVis>"
     -appimage
     -always-overwrite
-    COMMENT "Deploying TSP application for Linux..."
-    DEPENDS TSP
+    COMMENT "Deploying AlgoVis application for Linux..."
+    DEPENDS AlgoVis
   )
 endif()
 
 # 创建 ZIP 打包目标
 add_custom_target(package
-  COMMAND ${CMAKE_COMMAND} -E tar cf "${CMAKE_BINARY_DIR}/TSP-${PROJECT_VERSION}-${CMAKE_SYSTEM_NAME}.zip"
+  COMMAND ${CMAKE_COMMAND} -E tar cf "${CMAKE_BINARY_DIR}/AlgoVis-${PROJECT_VERSION}-${CMAKE_SYSTEM_NAME}.zip"
   --format=zip
   "${DEPLOY_DIR}"
   DEPENDS deploy
@@ -211,9 +212,9 @@ install(FILES
 # 创建便携式版本目标
 add_custom_target(portable
   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/config/tsp_config.ini"
-  "${CMAKE_BINARY_DIR}/$<TARGET_FILE_NAME:TSP>.ini"
+  "${CMAKE_BINARY_DIR}/$<TARGET_FILE_NAME:AlgoVis>.ini"
   COMMENT "Creating portable version configuration..."
-  DEPENDS TSP
+  DEPENDS AlgoVis
 )
 
 # 添加清理部署文件的目标
@@ -226,14 +227,14 @@ add_custom_target(clean_deploy
 # ==================== 打包相关配置结束 ====================
 
 include(GNUInstallDirs)
-install(TARGETS TSP
+install(TARGETS AlgoVis
   BUNDLE DESTINATION .
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-  qt_finalize_executable(TSP)
+  qt_finalize_executable(AlgoVis)
 endif()
 
 # 显示打包相关信息
