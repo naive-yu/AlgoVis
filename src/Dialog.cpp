@@ -25,6 +25,9 @@ void Dialog::paintEvent(QPaintEvent *event) {
     int width = this->width();
     int height = this->height();
     QPainter painter = QPainter(this);
+    // 启用抗锯齿和高质量缩放
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform, true);
     double y_scale = (height - 100) / (maxi - iter_best[size - 1]);
     double y_start = iter_best[size - 1];
     double x_scale = (width - 100) / (size + 0.0); // max_iter

@@ -215,6 +215,7 @@ void MyCPlus::mouseMoveEvent(QMouseEvent *e) {
     move(e->pos() - p);
   }
 }
+
 void MyCPlus::mouseReleaseEvent(QMouseEvent *e) {
   if (ui->stackedWidget->currentWidget() == ui->pageGame) {
     // 通过x,y增量确定手势方向
